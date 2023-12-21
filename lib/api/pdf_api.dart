@@ -59,4 +59,9 @@ class PdfApi {
     print('File Path: $url');
     await OpenFile.open(url);
   }
+
+  static Future<File> generateTable() async {
+    final pdf = Document();
+    return saveDocument(name: 'my_example.pdf', pdf: pdf);
+  }
 }

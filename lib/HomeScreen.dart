@@ -52,7 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.all(const Size(250, 50)),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                final pdfFile = await PdfApi.generateTable();
+              },
               child: const Text("Table PDF")),
           const SizedBox(
             height: 10,
