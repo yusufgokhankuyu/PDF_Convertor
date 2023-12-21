@@ -54,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               onPressed: () async {
                 final pdfFile = await PdfApi.generateTable();
+                PdfApi.openFile(pdfFile);
               },
               child: const Text("Table PDF")),
           const SizedBox(
@@ -63,7 +64,10 @@ class _HomeScreenState extends State<HomeScreen> {
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.all(const Size(250, 50)),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                final pdfFile = await PdfApi.generateImage();
+                PdfApi.openFile(pdfFile);
+              },
               child: const Text("Image PDF")),
         ]),
       ),

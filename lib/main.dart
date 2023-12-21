@@ -49,18 +49,23 @@ class _MyHomePageState extends State<MyHomePage> {
             'assets/pdfSplash.json',
             //'https://assets5.lottiefiles.com/packages/lf20_KMqzGr.json',
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           Text(
             'Convert \nTexts, \nParagraphs, \nTables, \nImages',
             textAlign: TextAlign.center,
             style: GoogleFonts.quicksand(
                 fontSize: 25, color: Colors.red, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           Text(
             'to PDF',
             textAlign: TextAlign.center,
-            style: GoogleFonts.quicksand(fontSize: 25, color: Colors.red, fontWeight: FontWeight.bold),
+            style: GoogleFonts.quicksand(
+                fontSize: 25, color: Colors.red, fontWeight: FontWeight.bold),
           ),
         ],
       ),
