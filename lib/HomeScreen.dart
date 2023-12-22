@@ -47,10 +47,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
-                      "You can convert your \nsample text files to PDF",
-                      style: GoogleFonts.quicksand(fontSize: 16),
-                    ),
+                    child: Text.rich(TextSpan(
+                      text: 'You can convert your \nsample ',
+                      style: GoogleFonts.quicksand(
+                          fontSize: 16), // default text style
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'text',
+                            style: GoogleFonts.quicksand(
+                                fontSize: 16,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: ' files to PDF',
+                            style: GoogleFonts.quicksand(fontSize: 16)),
+                      ],
+                    )
+                        // "You can convert your \nsample text files to PDF",
+                        // style: GoogleFonts.quicksand(fontSize: 16),
+                        ),
                   ),
                 ],
               ),
@@ -74,10 +89,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
-                      "You can convert your \nsample paragraph files to PDF",
-                      style: GoogleFonts.quicksand(fontSize: 16),
-                    ),
+                    child: Text.rich(TextSpan(
+                      text: 'You can convert your \nsample ',
+                      style: GoogleFonts.quicksand(
+                          fontSize: 16), // default text style
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'paragraph',
+                            style: GoogleFonts.quicksand(
+                                fontSize: 16,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: ' files to PDF',
+                            style: GoogleFonts.quicksand(fontSize: 16)),
+                      ],
+                    )),
                   ),
                   Container(
                     padding: const EdgeInsets.all(10),
@@ -113,10 +140,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
-                      "You can convert your \nsample table files to PDF",
-                      style: GoogleFonts.quicksand(fontSize: 16),
-                    ),
+                    child: Text.rich(TextSpan(
+                      text: 'You can convert your \nsample ',
+                      style: GoogleFonts.quicksand(
+                          fontSize: 16), // default text style
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'table',
+                            style: GoogleFonts.quicksand(
+                                fontSize: 16,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: ' files to PDF',
+                            style: GoogleFonts.quicksand(fontSize: 16)),
+                      ],
+                    )),
                   ),
                 ],
               ),
@@ -136,10 +175,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
-                      "You can convert your \nsample image files to PDF",
-                      style: GoogleFonts.quicksand(fontSize: 16),
-                    ),
+                    child: Text.rich(TextSpan(
+                      text: 'You can convert your \nsample ',
+                      style: GoogleFonts.quicksand(
+                          fontSize: 16), // default text style
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'image',
+                            style: GoogleFonts.quicksand(
+                                fontSize: 16,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: ' files to PDF',
+                            style: GoogleFonts.quicksand(fontSize: 16)),
+                      ],
+                    )),
                   ),
                   Container(
                     padding: const EdgeInsets.all(10),
