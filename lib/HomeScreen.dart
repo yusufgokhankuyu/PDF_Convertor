@@ -1,4 +1,5 @@
 import 'package:create_pdf/api/pdf_paragrapgh_api.dart';
+import 'package:create_pdf/api/text_Editor.dart';
 import 'package:flutter/material.dart';
 import 'package:create_pdf/api/pdf_api.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,19 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TextEditor(),
+                  ));
+            },
+            child: Text("go Text Editor"),
+          ),
           const SizedBox(
             height: 20,
           ),
