@@ -62,10 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             text: ' files to PDF',
                             style: GoogleFonts.quicksand(fontSize: 16)),
                       ],
-                    )
-                        // "You can convert your \nsample text files to PDF",
-                        // style: GoogleFonts.quicksand(fontSize: 16),
-                        ),
+                    )),
+                  ),
+                  const Icon(
+                    Icons.text_snippet_outlined,
+                    color: Colors.red,
+                    size: 35,
                   ),
                 ],
               ),
@@ -87,6 +89,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  const Icon(
+                    Icons.description,
+                    color: Colors.red,
+                    size: 35,
+                  ),
                   Container(
                     alignment: Alignment.center,
                     child: Text.rich(TextSpan(
@@ -106,12 +113,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     )),
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    width: 100,
-                    height: MediaQuery.sizeOf(context).height / 5.5,
-                    child: Image.asset(
-                      "assets/pdf.png",
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      width: 100,
+                      height: MediaQuery.sizeOf(context).height / 5.5,
+                      child: Image.asset(
+                        "assets/pdf.png",
+                      ),
                     ),
                   ),
                 ],
@@ -157,6 +166,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     )),
                   ),
+                  const Icon(
+                    Icons.table_chart_outlined,
+                    color: Colors.red,
+                    size: 35,
+                  ),
                 ],
               ),
             ),
@@ -173,6 +187,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  const Icon(
+                    Icons.image,
+                    color: Colors.red,
+                    size: 35,
+                  ),
                   Container(
                     alignment: Alignment.center,
                     child: Text.rich(TextSpan(
