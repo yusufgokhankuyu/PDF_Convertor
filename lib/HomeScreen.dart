@@ -1,6 +1,7 @@
 import 'package:create_pdf/api/pdf_paragrapgh_api.dart';
 import 'package:flutter/material.dart';
 import 'package:create_pdf/api/pdf_api.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,57 +19,191 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ElevatedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          const SizedBox(
+            height: 20,
+          ),
+          InkWell(
+            onTap: () async {
+              try {
+                final pdfFile =
+                    await PdfApi.generateCenteredText('Bu bir denemedir');
+                PdfApi.openFile(pdfFile);
+              } catch (e) {
+                print('Error: $e');
+              }
+            },
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 100,
+                    height: MediaQuery.sizeOf(context).height / 5.5,
+                    child: Image.asset(
+                      "assets/pdf.png",
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "You can convert your \nsample text files to PDF",
+                      style: GoogleFonts.quicksand(fontSize: 16),
+                    ),
+                  ),
+                ],
               ),
-              onPressed: () async {
-                try {
-                  final pdfFile =
-                      await PdfApi.generateCenteredText('Bu bir denemedir');
-                  PdfApi.openFile(pdfFile);
-                } catch (e) {
-                  print('Error: $e');
-                }
-              },
-              child: const Text("Simple PDF")),
+            ),
+          ),
           const SizedBox(
             height: 10,
           ),
-          ElevatedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(const Size(250, 50)),
-              ),
-              onPressed: () async {
+          InkWell(
+            onTap: () async {
+              try {
                 final pdfFile = await PdfParagraphApi.generate();
                 PdfApi.openFile(pdfFile);
-              },
-              child: const Text("Paragraphs PDF")),
+              } catch (e) {
+                print("Error: :::::.::.:..:" + e.toString());
+              }
+            },
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "You can convert your \nsample paragraph files to PDF",
+                      style: GoogleFonts.quicksand(fontSize: 16),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 100,
+                    height: MediaQuery.sizeOf(context).height / 5.5,
+                    child: Image.asset(
+                      "assets/pdf.png",
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(
             height: 10,
           ),
-          ElevatedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          InkWell(
+            onTap: () async {
+              final pdfFile = await PdfApi.generateTable();
+              PdfApi.openFile(pdfFile);
+            },
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 100,
+                    height: MediaQuery.sizeOf(context).height / 5.5,
+                    child: Image.asset(
+                      "assets/pdf.png",
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "You can convert your \nsample table files to PDF",
+                      style: GoogleFonts.quicksand(fontSize: 16),
+                    ),
+                  ),
+                ],
               ),
-              onPressed: () async {
-                final pdfFile = await PdfApi.generateTable();
-                PdfApi.openFile(pdfFile);
-              },
-              child: const Text("Table PDF")),
+            ),
+          ),
           const SizedBox(
             height: 10,
           ),
-          ElevatedButton(
-              style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          InkWell(
+            onTap: () async {
+              final pdfFile = await PdfApi.generateImage();
+              PdfApi.openFile(pdfFile);
+            },
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "You can convert your \nsample image files to PDF",
+                      style: GoogleFonts.quicksand(fontSize: 16),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: 100,
+                    height: MediaQuery.sizeOf(context).height / 5.5,
+                    child: Image.asset(
+                      "assets/pdf.png",
+                    ),
+                  ),
+                ],
               ),
-              onPressed: () async {
-                final pdfFile = await PdfApi.generateImage();
-                PdfApi.openFile(pdfFile);
-              },
-              child: const Text("Image PDF")),
+            ),
+          ),
+
+          // ElevatedButton(
+          //     style: ButtonStyle(
+          //       minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          //     ),
+          //     onPressed: () async {
+          //       try {
+          //         final pdfFile =
+          //             await PdfApi.generateCenteredText('Bu bir denemedir');
+          //         PdfApi.openFile(pdfFile);
+          //       } catch (e) {
+          //         print('Error: $e');
+          //       }
+          //     },
+          //     child: const Text("Simple PDF")),
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          // ElevatedButton(
+          //     style: ButtonStyle(
+          //       minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          //     ),
+          //     onPressed: () async {
+          //       final pdfFile = await PdfParagraphApi.generate();
+          //       PdfApi.openFile(pdfFile);
+          //     },
+          //     child: const Text("Paragraphs PDF")),
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          // ElevatedButton(
+          //     style: ButtonStyle(
+          //       minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          //     ),
+          //     onPressed: () async {
+          //       final pdfFile = await PdfApi.generateTable();
+          //       PdfApi.openFile(pdfFile);
+          //     },
+          //     child: const Text("Table PDF")),
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          // ElevatedButton(
+          //     style: ButtonStyle(
+          //       minimumSize: MaterialStateProperty.all(const Size(250, 50)),
+          //     ),
+          //     onPressed: () async {
+          //       final pdfFile = await PdfApi.generateImage();
+          //       PdfApi.openFile(pdfFile);
+          //     },
+          //     child: const Text("Image PDF")),
         ]),
       ),
     );

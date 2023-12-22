@@ -10,7 +10,7 @@ class PdfParagraphApi {
   static Future<File> generate() async {
     final pdf = Document();
 
-    final font = await PdfGoogleFonts.nunitoExtraLight();
+    final customFont = await PdfGoogleFonts.nunitoExtraLight();
 
     pdf.addPage(
       MultiPage(
@@ -20,7 +20,7 @@ class PdfParagraphApi {
           Paragraph(
             text:
                 'This is my custom font that displays also characters such as €, Ł, ...',
-            style: TextStyle(font: font, fontSize: 20),
+            style: TextStyle(font: customFont, fontSize: 20),
           ),
           buildCustomHeadline(),
           buildLink(),
@@ -29,18 +29,18 @@ class PdfParagraphApi {
           Paragraph(text: LoremText().paragraph(60)),
           Paragraph(text: LoremText().paragraph(60)),
           Paragraph(text: LoremText().paragraph(60)),
-          Paragraph(text: LoremText().paragraph(60)),
-          Paragraph(text: LoremText().paragraph(60)),
+          // Paragraph(text: LoremText().paragraph(60)),
+          //Paragraph(text: LoremText().paragraph(60)),
         ],
         footer: (context) {
           final text = 'Page ${context.pageNumber} of ${context.pagesCount}';
 
           return Container(
             alignment: Alignment.centerRight,
-            margin: const EdgeInsets.only(top: 1 * PdfPageFormat.cm),
+            margin: EdgeInsets.only(top: 1 * PdfPageFormat.cm),
             child: Text(
               text,
-              style: const TextStyle(color: PdfColors.black),
+              style: TextStyle(color: PdfColors.black),
             ),
           );
         },
@@ -50,8 +50,8 @@ class PdfParagraphApi {
   }
 
   static Widget buildCustomHeader() => Container(
-        padding: const EdgeInsets.only(bottom: 3 * PdfPageFormat.mm),
-        decoration: const BoxDecoration(
+        padding: EdgeInsets.only(bottom: 3 * PdfPageFormat.mm),
+        decoration: BoxDecoration(
           border: Border(bottom: BorderSide(width: 2, color: PdfColors.blue)),
         ),
         child: Row(
@@ -60,7 +60,7 @@ class PdfParagraphApi {
             SizedBox(width: 0.5 * PdfPageFormat.cm),
             Text(
               'Create Your PDF',
-              style: const TextStyle(fontSize: 20, color: PdfColors.blue),
+              style: TextStyle(fontSize: 20, color: PdfColors.blue),
             ),
           ],
         ),
@@ -75,15 +75,15 @@ class PdfParagraphApi {
             color: PdfColors.white,
           ),
         ),
-        padding: const EdgeInsets.all(4),
-        decoration: const BoxDecoration(color: PdfColors.red),
+        padding: EdgeInsets.all(4),
+        decoration: BoxDecoration(color: PdfColors.red),
       );
 
   static Widget buildLink() => UrlLink(
         destination: 'https://flutter.dev',
         child: Text(
           'Go to flutter.dev',
-          style: const TextStyle(
+          style: TextStyle(
             decoration: TextDecoration.underline,
             color: PdfColors.blue,
           ),
