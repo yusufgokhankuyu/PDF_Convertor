@@ -1,6 +1,10 @@
 # create_pdf
 
-A new Flutter project.
+Create PDF
+With the Create PDF project, you can easily convert text, paragraph, table and image files into pdf files.
+It helps users with its easy user interface.
+
+There is a splash screen and a home screen in this project. On the Home Screen, the user can easily convert the file to pdf by selecting the desired file type.
 
 ## Getting Started
 
