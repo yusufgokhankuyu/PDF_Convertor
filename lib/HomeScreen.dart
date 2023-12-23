@@ -24,16 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
           // const SizedBox(
           //   height: 20,
           // ),
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TextEditor(),
-                  ));
-            },
-            child: Text("go Text Editor"),
-          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TextEditor(),
+                    ));
+              },
+              child: const Text("Text Editor")),
           const SizedBox(
             height: 20,
           ),

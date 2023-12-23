@@ -17,7 +17,7 @@ class _TextEditorState extends State<TextEditor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TEXT EDİTOR"),
+        title: Text("Create Text"),
       ),
       body: Column(
         children: [
