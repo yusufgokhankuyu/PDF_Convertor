@@ -1,6 +1,7 @@
 import 'package:create_pdf/api/pdf_api.dart';
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced/html_editor.dart';
+import 'package:html/parser.dart';
 
 class TextEditor extends StatefulWidget {
   const TextEditor({super.key});
@@ -11,6 +12,7 @@ class TextEditor extends StatefulWidget {
 
 class _TextEditorState extends State<TextEditor> {
   HtmlEditorController controller = HtmlEditorController();
+  TextEditingController plainTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,22 +29,35 @@ class _TextEditorState extends State<TextEditor> {
                 const HtmlEditorOptions(hint: 'Your text here ...'),
             otherOptions: const OtherOptions(height: 400),
           ),
-          // ElevatedButton(
-          //     onPressed: () async {
-          //       try {
-          //         //final htmlContent = controller.editorController.toString();
-          //         // print(
-          //         //     "html ::::::::::::::::::::::::::::::::::::: $htmlContent");
-          //         final pdfFile =
-          //             await PdfApi.generateCenteredText(htmlContent.toString());
-          //         PdfApi.openFile(pdfFile);
-          //       } catch (e) {
-          //         print('Error: $e');
-          //       }
-          //     },
-          //     child: Text("Convert to Pdf"))
+          ElevatedButton(
+              onPressed: () async {
+                try {
+                  final htmlContent = await controller.getText();
+                  _convertHtmlToPdf(htmlContent);
+                  print(
+                      "html ::::::::::::::::::::::::::::::::::::: $htmlContent");
+                  // final pdfFile =
+                  //     await PdfApi.generateCenteredText(htmlContent.toString());
+                  // PdfApi.openFile(pdfFile);
+                } catch (e) {
+                  print('Error: $e');
+                }
+              },
+              child: Text("print"))
         ],
       ),
     );
+  }
+
+  String _convertHtmlToPlainText(String htmlText) {
+    final document = parse(htmlText);
+    final String plainText = parse(document.body!.text).documentElement!.text;
+    return plainText;
+  }
+
+  void _convertHtmlToPdf(String htmlContent) async {
+    final plainTextContent = await _convertHtmlToPlainText(htmlContent);
+    final pdfFile = await PdfApi.generateCenteredText(plainTextContent);
+    PdfApi.openFile(pdfFile);
   }
 }
