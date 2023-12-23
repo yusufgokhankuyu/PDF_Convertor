@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Lottie.asset(
             'assets/pdfSplash.json',
-            //'https://assets5.lottiefiles.com/packages/lf20_KMqzGr.json',
           ),
           const SizedBox(
             height: 15,
@@ -61,8 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            'to PDF',
+          Text.rich(
+            TextSpan(text: "to ", children: <TextSpan>[
+              TextSpan(
+                  text: 'PDF',
+                  style: GoogleFonts.quicksand(
+                      fontSize: 16,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold)),
+            ]),
             textAlign: TextAlign.center,
             style: GoogleFonts.quicksand(
                 fontSize: 25, color: Colors.red, fontWeight: FontWeight.bold),
