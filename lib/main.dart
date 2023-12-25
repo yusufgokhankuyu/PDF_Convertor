@@ -80,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
       splashIconSize: 500,
       duration: 4000,
       splashTransition: SplashTransition.fadeTransition,
-      //pageTransitionType: PageTransitionType.leftToRight,
       animationDuration: const Duration(seconds: 2),
     );
   }

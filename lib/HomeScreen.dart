@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     alignment: Alignment.center,
                     child: Text.rich(TextSpan(
-                      text: 'You can convert your \nsample ',
+                      text: 'Convert your \nsample ',
                       style: GoogleFonts.quicksand(
                           fontSize: 16), // default text style
                       children: <TextSpan>[
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold)),
                         TextSpan(
-                            text: ' files to PDF',
+                            text: ' files to PDF easily',
                             style: GoogleFonts.quicksand(fontSize: 16)),
                       ],
                     )),
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 final pdfFile = await PdfParagraphApi.generate();
                 PdfApi.openFile(pdfFile);
               } catch (e) {
-                print("Error: :::::.::.:..:" + e.toString());
+                print("Error: :::::::::" + e.toString());
               }
             },
             child: Card(
