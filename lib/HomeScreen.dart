@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings, avoid_print
+
 import 'package:create_pdf/api/pdf_paragrapgh_api.dart';
 import 'package:create_pdf/api/text_Editor.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TextEditor(),
+                      builder: (context) => const TextEditor(),
                     ));
               },
               child: const Text("Text Editor")),

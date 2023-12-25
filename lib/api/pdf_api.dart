@@ -116,7 +116,7 @@ class PdfApi {
             child: pw.Center(
               child: pw.Text(
                 'Foreground Text',
-                style: pw.TextStyle(color: PdfColors.white, fontSize: 48),
+                style: const pw.TextStyle(color: PdfColors.white, fontSize: 48),
               ),
             ),
           ),

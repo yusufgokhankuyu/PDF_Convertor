@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:create_pdf/api/pdf_api.dart';
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced/html_editor.dart';
@@ -17,7 +19,7 @@ class _TextEditorState extends State<TextEditor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Create Text"),
+        title: const Text("Text Editor"),
       ),
       body: Column(
         children: [
@@ -43,7 +45,7 @@ class _TextEditorState extends State<TextEditor> {
                   print('Error: $e');
                 }
               },
-              child: Text("print"))
+              child: const Text("print"))
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/services.dart';
 import 'package:create_pdf/api/pdf_api.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
@@ -37,10 +36,10 @@ class PdfParagraphApi {
 
           return Container(
             alignment: Alignment.centerRight,
-            margin: EdgeInsets.only(top: 1 * PdfPageFormat.cm),
+            margin: const EdgeInsets.only(top: 1 * PdfPageFormat.cm),
             child: Text(
               text,
-              style: TextStyle(color: PdfColors.black),
+              style: const TextStyle(color: PdfColors.black),
             ),
           );
         },
@@ -50,8 +49,8 @@ class PdfParagraphApi {
   }
 
   static Widget buildCustomHeader() => Container(
-        padding: EdgeInsets.only(bottom: 3 * PdfPageFormat.mm),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.only(bottom: 3 * PdfPageFormat.mm),
+        decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(width: 2, color: PdfColors.blue)),
         ),
         child: Row(
@@ -60,7 +59,7 @@ class PdfParagraphApi {
             SizedBox(width: 0.5 * PdfPageFormat.cm),
             Text(
               'Create Your PDF',
-              style: TextStyle(fontSize: 20, color: PdfColors.blue),
+              style: const TextStyle(fontSize: 20, color: PdfColors.blue),
             ),
           ],
         ),
@@ -75,15 +74,15 @@ class PdfParagraphApi {
             color: PdfColors.white,
           ),
         ),
-        padding: EdgeInsets.all(4),
-        decoration: BoxDecoration(color: PdfColors.red),
+        padding: const EdgeInsets.all(4),
+        decoration: const BoxDecoration(color: PdfColors.red),
       );
 
   static Widget buildLink() => UrlLink(
         destination: 'https://flutter.dev',
         child: Text(
           'Go to flutter.dev',
-          style: TextStyle(
+          style: const TextStyle(
             decoration: TextDecoration.underline,
             color: PdfColors.blue,
           ),
